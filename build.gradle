@@ -1,0 +1,49 @@
+buildscript {
+    ext {
+        spotbugsVersion = '1.6.8'
+        toolVersion = '3.1.10'
+    }
+}
+
+plugins {
+    id 'java'
+    id 'jacoco'
+    id 'com.github.spotbugs' version '1.6.8' apply false
+}
+
+group 'com.mycompany'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+
+apply from: "$rootProject.projectDir/gradle/spotbugs.gradle"
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    useJUnitPlatform()
+}
+jacoco {
+    toolVersion = "0.8.2"
+}
+
+dependencies {
+    compileOnly(
+        "org.projectlombok:lombok:1.18.10"
+    )
+    annotationProcessor(
+        "org.projectlombok:lombok:1.18.10"
+    )
+    testImplementation(
+        "org.junit.jupiter:junit-jupiter-api:5.5.2",
+        "com.google.guava:guava:28.1-jre"
+    )
+    testRuntime("org.junit.jupiter:junit-jupiter-engine:5.3.2")
+    testCompileOnly(
+        "org.projectlombok:lombok:1.18.10"
+    )
+    testAnnotationProcessor(
+        "org.projectlombok:lombok:1.18.10"
+    )
+}
