@@ -118,7 +118,7 @@ class BillCalculationServiceTest {
 
     val calculationService = new BillCalculationService(user);
     assertEquals(
-        BigDecimal.valueOf(744.55),
+        BigDecimal.valueOf(744.54),
         calculationService.netPayableAmount()
     );
   }
@@ -150,7 +150,7 @@ class BillCalculationServiceTest {
 
     val calculationService = new BillCalculationService(user);
     assertEquals(
-        BigDecimal.valueOf(703.26),
+        BigDecimal.valueOf(703.25),
         calculationService.netPayableAmount()
     );
   }
@@ -182,7 +182,7 @@ class BillCalculationServiceTest {
 
     val calculationService = new BillCalculationService(user);
     assertEquals(
-        BigDecimal.valueOf(538.09),
+        BigDecimal.valueOf(538.08),
         calculationService.netPayableAmount()
     );
   }
@@ -223,7 +223,7 @@ class BillCalculationServiceTest {
 
     val calculationService = new BillCalculationService(user);
     assertEquals(
-        BigDecimal.valueOf(633.09),
+        BigDecimal.valueOf(633.08),
         calculationService.netPayableAmount()
     );
   }

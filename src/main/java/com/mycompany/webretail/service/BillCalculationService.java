@@ -22,7 +22,7 @@ public class BillCalculationService {
     return totalAmountPreDiscount()
         .subtract(fixedAmountDiscount())
         .subtract(percentAmountDiscount())
-        .setScale(2, RoundingMode.HALF_DOWN);
+        .setScale(2, BigDecimal.ROUND_DOWN);
   }
 
   /**
