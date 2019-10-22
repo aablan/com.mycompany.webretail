@@ -236,7 +236,7 @@ class BillCalculationServiceTest {
         .build();
     val calculationService = new BillCalculationService(user);
     assertEquals(
-        BigDecimal.valueOf(0.00).setScale(2, RoundingMode.UNNECESSARY),
+        new BigDecimal("0.00"),
         calculationService.netPayableAmount()
     );
   }
